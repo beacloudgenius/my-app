@@ -14,7 +14,7 @@ pipeline {
     stage('Deploy') {
       steps {
         sh script: '''
-        aws s3 sync build/ s3://thecloudseminar.com --acl public-read --delete
+        /root/.local/bin/aws s3 sync build/ s3://thecloudseminar.com --acl public-read --delete
         ''', label: "Deploying to https://thecloudseminar.com"
       }
     }
