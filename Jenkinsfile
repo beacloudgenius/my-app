@@ -5,6 +5,7 @@ pipeline {
       steps {
         sh script: '''
         git checkout master
+        npm install
         npm run build
        ''', label: "Building production"
       }
